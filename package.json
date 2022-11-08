@@ -1,0 +1,25 @@
+{
+  "name": "node-v6",
+  "version": "1.0.0",
+  "description": "This example is so cool.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nf start"
+  },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
+  "author": "wingeva",
+  "license": "MIT",
+  "dependencies": {
+    "bull": "^4.10.1",
+    "express": "^4.16.4",
+    "throng": "^5.0.0"
+  },
+  "engines": {
+    "node": "14.x",
+    "npm": ">= 4.4.0"
+  }
+}
