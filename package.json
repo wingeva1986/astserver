@@ -1,5 +1,5 @@
 {
-  "name": "node-v6",
+  "name": "ast_srv",
   "version": "1.0.0",
   "description": "This example is so cool.",
   "main": "server.js",
