@@ -1,16 +1,8 @@
 {
-  "name": "ast_srv",
+  "name": "astsrv",
   "version": "1.0.0",
   "description": "This example is so cool.",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"nf start"
-  },
-  "keywords": [
-    "example",
-    "heroku"
-  ],
   "author": "wingeva",
   "license": "MIT",
   "dependencies": {
