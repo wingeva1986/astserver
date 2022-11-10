@@ -7,9 +7,9 @@ processes = []
 
 
 [build]
-  builder = "paketobuildpacks/builder:base"
-  buildpacks = ["gcr.io/paketo-buildpacks/nodejs"]
-  
+  builder = "heroku/buildpacks:20"
+
+
 [env]
 
 [experimental]
