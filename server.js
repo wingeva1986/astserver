@@ -10,7 +10,7 @@ let app = express();
 app.use(express.json({limit:'10mb'}));
 
 // Create / Connect to a named work queue
-let workQueue = new Queue('work', REDIS_URL,{settings:{lockDuration:100000,maxStalledCount:0}});
+let workQueue = new Queue('work', REDIS_URL,{settings:{lockDuration:150000,maxStalledCount:0}});
 
 //var results={};
 
