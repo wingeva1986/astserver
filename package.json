@@ -2,17 +2,12 @@
   "name": "astsrv",
   "version": "1.0.0",
   "description": "This example is so cool.",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "main": "server.js",
+  "main": "api/server.js",
   "author": "wingeva",
   "license": "MIT",
   "dependencies": {
     "bull": "^4.10.1",
-    "express": "^4.16.4",
-    "throng": "^5.0.0"
+    "express": "^4.16.4"
   },
   "engines": {
     "node": "14.x"
