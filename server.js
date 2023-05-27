@@ -11,7 +11,7 @@ serverAdapter.setBasePath('/admin/queues');
 // Serve on PORT on Heroku and on localhost:5000 locally
 let PORT = process.env.PORT  || '8080';
 // Connect to a local redis intance locally, and the Heroku-provided URL in production
-let REDIS_URL = process.env.REDIS_MASTER_URL  ||'redis://127.0.0.1:6379';
+let REDIS_URL = process.env.REDIS_URL  ||'redis://127.0.0.1:6379';
 
 let app = express();
 app.use(express.json({limit:'10mb'}));
@@ -19,7 +19,7 @@ app.use(express.json({limit:'10mb'}));
 
 
 // Create / Connect to a named work queue
-let workQueue = new Queue('work', REDIS_URL,{settings:{lockDuration:100000,maxStalledCount:0}});
+let workQueue = new Queue('work', REDIS_URL,{settings:{lockDuration:100000,maxStalledCount:0},redis: { tls: true, enableTLSForSentinelMode: false }});
 
 
 const { addQueue, removeQueue, setQueues, replaceQueues } = createBullBoard({
