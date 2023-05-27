@@ -8,7 +8,8 @@
   "dependencies": {
     "bull": "^4.10.1",
     "express": "^4.16.4",
-    "bull-board":"^5.2.0"
+    "@bull-board/api":"^5.2.0",
+    "@bull-board/express":"^5.2.0"
   },
   "engines": {
     "node": "14.x"
