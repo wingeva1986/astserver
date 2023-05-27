@@ -1,6 +1,14 @@
 let express = require('express');
 let Queue = require('bull');
 
+const { createBullBoard } = require('@bull-board/api');
+const { BullAdapter } = require('@bull-board/api/bullAdapter');
+const { ExpressAdapter } = require('@bull-board/express');
+
+const serverAdapter = new ExpressAdapter();
+serverAdapter.setBasePath('/admin/queues');
+
+
 // Serve on PORT on Heroku and on localhost:5000 locally
 let PORT = process.env.PORT  || '8080';
 // Connect to a local redis intance locally, and the Heroku-provided URL in production
@@ -8,6 +16,8 @@ let REDIS_URL = process.env.REDIS_URL  ||'redis://127.0.0.1:6379';
 
 let app = express();
 app.use(express.json({limit:'10mb'}));
+
+app.use('/admin/queues', serverAdapter.getRouter());
 
 // Create / Connect to a named work queue
 let workQueue = new Queue('work', REDIS_URL,{settings:{lockDuration:100000,maxStalledCount:0}});
